@@ -1,8 +1,9 @@
-const app = require('./routes/api');
+const routes = require('./routes/api');
+const app = routes.app;
 path = require('path');
 
 
 
-app.app.listen(3000, function() {
-  console.log('listen in http://localhost:3000');
+app.listen(8080, function() {
+  console.log('listen in http://localhost:8080');
 });

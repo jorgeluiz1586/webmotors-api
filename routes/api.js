@@ -1,9 +1,20 @@
-const app = require('../server');
-const controller = require('../app/controllers/HomeController');
-const HomeController = new controller.HomeController();
+const server = require('../server');
+const app = server.app;
+const homecontroller = require('../app/controllers/HomeController');
+const carcontroller = require('../app/controllers/CarController');
+const HomeController = new homecontroller.HomeController();
+const CarController = new carcontroller.CarController();
 
-app.app.get('/', (req, res) => {
+app.get('/cars', (req, res) => {
+  CarController.index(req, res);
+});
+
+app.post('/auth/signup', (req, res) => {
+  console.log(req.body);
+});
+
+app.get('/', (req, res) => {
   HomeController.index(req, res);
 });
 
-exports.app = app.app;
+exports.app = app;

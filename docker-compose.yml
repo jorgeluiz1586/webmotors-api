@@ -1,14 +1,14 @@
-version: '3'
+version: '3.7'
 
 services:
   mysql:
     image: mysql:5.7.38
     container_name: mysql
-    port:
-      - 3306:3306
+    ports:
+      - 3308:3306
     environment:
-      - MYSQL_DATABASE: webmotors_db
-      - MYSQL_USER: webmotors_admin
-      - MYSQL_PASSWORD: 12345Webmotors
-      - MYSQL_ROOT_PASSWORD: root
-      - MYSQL_RANDOM_ROOT_PASSWORD: 1
+      - MYSQL_DATABASE=webmotors_db
+      - MYSQL_USER=webmotors_admin
+      - MYSQL_PASSWORD=12345Webmotors
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_RANDOM_ROOT_PASSWORD=1
